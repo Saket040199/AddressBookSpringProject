@@ -13,6 +13,7 @@ repositories {
 }
 
 dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.5.1'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa' 
 	//implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.4.6'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -24,6 +25,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	testCompileOnly 'org.projectlombok:lombok:1.18.20'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+	
 }
 
 test {
