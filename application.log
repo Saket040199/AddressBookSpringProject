@@ -15,3 +15,9 @@
 2021-06-24 14:17:47.554  WARN 5716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2021-06-24 14:17:47.780  INFO 5716 --- [restartedMain] .b.A.AddressBookSpringProjectApplication : Started AddressBookSpringProjectApplication in 1.169 seconds (JVM running for 169.924)
 2021-06-24 14:17:47.784  INFO 5716 --- [restartedMain] .b.A.AddressBookSpringProjectApplication : Employee Payroll app started in COMMON environment
+2021-06-24 14:17:49.313  INFO 5716 --- [restartedMain] .b.A.AddressBookSpringProjectApplication : Starting AddressBookSpringProjectApplication using Java 15.0.2 on DESKTOP-HDF8SSB with PID 5716 (D:\SpringFrameWork\workspace-spring-tool-suite-4-4.10.0.RELEASE\AddressBookSpringProject\bin\main started by Saket Jain in D:\SpringFrameWork\workspace-spring-tool-suite-4-4.10.0.RELEASE\AddressBookSpringProject)
+2021-06-24 14:17:49.313 DEBUG 5716 --- [restartedMain] .b.A.AddressBookSpringProjectApplication : Running with Spring Boot v2.5.1, Spring v5.3.8
+2021-06-24 14:17:49.313  INFO 5716 --- [restartedMain] .b.A.AddressBookSpringProjectApplication : No active profile set, falling back to default profiles: default
+2021-06-24 14:17:50.108  WARN 5716 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-06-24 14:17:50.332  INFO 5716 --- [restartedMain] .b.A.AddressBookSpringProjectApplication : Started AddressBookSpringProjectApplication in 1.07 seconds (JVM running for 172.475)
+2021-06-24 14:17:50.337  INFO 5716 --- [restartedMain] .b.A.AddressBookSpringProjectApplication : Employee Payroll app started in COMMON environment
