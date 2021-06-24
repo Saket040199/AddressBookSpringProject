@@ -8,6 +8,7 @@ public class AddressBookSpringProjectApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AddressBookSpringProjectApplication.class, args);
+		System.out.println("Project is Deploying Properly");
 	}
 
 }

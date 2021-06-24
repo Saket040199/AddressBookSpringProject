@@ -26,7 +26,7 @@ public class AddressBookController {
 	@Autowired
 	private IAddressBookService addressBookService;
 	
-	@RequestMapping(value = {"","/",})
+	@GetMapping(value = {"","/",})
 	public ResponseEntity<ResponseDTO> getAddressBookData(){
 		List<AddressBookData> addressBookList = null;
 		addressBookList = addressBookService.getAddressBookData();

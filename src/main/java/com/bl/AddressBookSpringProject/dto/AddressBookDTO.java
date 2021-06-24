@@ -1,5 +1,8 @@
 package com.bl.AddressBookSpringProject.dto;
 
+import lombok.Data;
+
+@Data
 public class AddressBookDTO {
 
 	public String name;
@@ -9,10 +12,8 @@ public class AddressBookDTO {
 		this.name = name;
 		this.address = address;
 	}
-	@Override
-	public String toString() {
-		return " [name=" + name + ", salary=" + address + "]";
+	public AddressBookDTO() {
+		// TODO Auto-generated constructor stub
 	}
-	
-	
+		
 }
