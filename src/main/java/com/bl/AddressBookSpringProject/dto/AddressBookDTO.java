@@ -13,15 +13,26 @@ public class AddressBookDTO {
     
     @NotEmpty(message="Address Should not be null")
 	public String address;
+    
+    
+    public long phoneNo;
+    public String city;
+    public String state;
+    public int zipCode;
 	
-	public AddressBookDTO(String name, String address) {
+    public AddressBookDTO() {
+		// TODO Auto-generated constructor stub
+	}
+    
+	public AddressBookDTO(String name,String address, long phoneNo, String city, String state,
+			int zipCode) {
 		super();
 		this.name = name;
 		this.address = address;
-	}
-	
-	public AddressBookDTO() {
-		// TODO Auto-generated constructor stub
+		this.phoneNo = phoneNo;
+		this.city = city;
+		this.state = state;
+		this.zipCode = zipCode;
 	}
 	
 		

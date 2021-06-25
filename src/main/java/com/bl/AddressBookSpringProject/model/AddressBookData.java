@@ -17,16 +17,21 @@ public class AddressBookData {
 	private int addressBookId;
 	private String name;
 	private String address;
+	private long phoneNo;
+	private String city;
+	private String state;
+	private int zipCode;
 	
-	public AddressBookData() {
-		// TODO Auto-generated constructor stub
-	}
-
+	
 	public AddressBookData(int addressBookId, AddressBookDTO addressBookDTO) {
 		super();
 		this.addressBookId = addressBookId;
 		this.name = addressBookDTO.name;
 		this.address = addressBookDTO.address;
+		this.phoneNo = addressBookDTO.phoneNo;
+		this.city = addressBookDTO.city;
+		this.state = addressBookDTO.state;
+		this.zipCode = addressBookDTO.zipCode;
 	}
 	
 }
