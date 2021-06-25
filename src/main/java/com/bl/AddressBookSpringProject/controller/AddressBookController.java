@@ -2,6 +2,8 @@ package com.bl.AddressBookSpringProject.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +45,7 @@ public class AddressBookController {
 	
 
 	@PostMapping("/create")
-	public ResponseEntity<ResponseDTO> addAddressBookData(@RequestBody AddressBookDTO addressBookDTO){
+	public ResponseEntity<ResponseDTO> addAddressBookData( @Valid @RequestBody AddressBookDTO addressBookDTO){
 		AddressBookData addressBookData = addressBookService.createAddressBookData(addressBookDTO);
 		ResponseDTO respDTO = new ResponseDTO("Create AddressBOOK Data Successfull", addressBookData);
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
@@ -51,7 +53,7 @@ public class AddressBookController {
 	
 
 	@PutMapping("/update/{addId}")
-	public ResponseEntity<ResponseDTO> updateAddressBookData(@PathVariable("addId") int addId, @RequestBody AddressBookDTO addressBookDTO){
+	public ResponseEntity<ResponseDTO> updateAddressBookData(@Valid @PathVariable("addId") int addId, @RequestBody AddressBookDTO addressBookDTO){
 		AddressBookData addressBookData = addressBookService.updateAddressBookData(addId, addressBookDTO);
 		ResponseDTO respDTO = new ResponseDTO("Update AddressBOOK Data Successfull", addressBookData);
 		return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
