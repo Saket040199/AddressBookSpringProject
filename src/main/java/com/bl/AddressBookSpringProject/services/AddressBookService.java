@@ -51,7 +51,11 @@ public class AddressBookService implements IAddressBookService {
 
 	@Override
 	public void deleteAddressBookData(int addId) {
-		addressBookList.remove(addId-1);
+		AddressBookData addressBookData = addressBookList.stream()
+				.filter(addData -> addData.getAddressBookId() == addId)
+				.findFirst()
+				.orElseThrow(() -> new AddressBookException("Delete cannot be succesfull !! Invalid ID"));
+	int delete = addressBookList.indexOf(addressBookData);
+	addressBookList.remove(delete);
 	}
-
 }
