@@ -14,18 +14,24 @@ public class AddressBookDTO {
     @NotEmpty(message="Address Should not be null")
 	public String address;
     
+    @Pattern(regexp = "^[0-9]{10}$", message= "InValid PhoneNo")
+    public String phoneNo;
     
-    public long phoneNo;
+    @NotEmpty(message = "City should not ne null")
     public String city;
+    
+    @NotEmpty(message = "State should not ne null")
     public String state;
-    public int zipCode;
+    
+    @Pattern(regexp = "^[0-9]{6}$", message= "Invalid PinCode")
+    public String zipCode;
 	
     public AddressBookDTO() {
 		// TODO Auto-generated constructor stub
 	}
     
-	public AddressBookDTO(String name,String address, long phoneNo, String city, String state,
-			int zipCode) {
+	public AddressBookDTO(String name,String address, String phoneNo, String city, String state,
+			String zipCode) {
 		super();
 		this.name = name;
 		this.address = address;

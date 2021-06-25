@@ -17,10 +17,10 @@ public class AddressBookData {
 	private int addressBookId;
 	private String name;
 	private String address;
-	private long phoneNo;
+	private String phoneNo;
 	private String city;
 	private String state;
-	private int zipCode;
+	private String zipCode;
 	
 	
 	public AddressBookData(int addressBookId, AddressBookDTO addressBookDTO) {
