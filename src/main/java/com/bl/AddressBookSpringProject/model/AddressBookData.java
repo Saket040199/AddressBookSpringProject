@@ -1,6 +1,9 @@
 package com.bl.AddressBookSpringProject.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -14,12 +17,26 @@ import lombok.Data;
 public class AddressBookData {
 
 	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	@Column(name= "ID")
 	private int addressBookId;
+	
+	@Column(name="Name")
 	private String name;
+	
+	@Column(name="Address")
 	private String address;
+	
+	@Column(name="PhoneNo")
 	private String phoneNo;
+	
+	@Column(name="City")
 	private String city;
+	
+	@Column(name="State")
 	private String state;
+	
+	@Column(name="ZipCode")
 	private String zipCode;
 	
 	
