@@ -39,16 +39,23 @@ public class AddressBookData {
 	@Column(name="ZipCode")
 	private String zipCode;
 	
+	public AddressBookData() {
+		// TODO Auto-generated constructor stub
+	}
 	
-	public AddressBookData(int addressBookId, AddressBookDTO addressBookDTO) {
-		super();
-		this.addressBookId = addressBookId;
+	public AddressBookData( AddressBookDTO addressBookDTO) {
+		this.updateAddressBookData(addressBookDTO);
+		
+	}
+
+
+	public void updateAddressBookData(AddressBookDTO addressBookDTO) {
 		this.name = addressBookDTO.name;
 		this.address = addressBookDTO.address;
 		this.phoneNo = addressBookDTO.phoneNo;
 		this.city = addressBookDTO.city;
 		this.state = addressBookDTO.state;
-		this.zipCode = addressBookDTO.zipCode;
+		this.zipCode = addressBookDTO.zipCode;		
 	}
 	
 }

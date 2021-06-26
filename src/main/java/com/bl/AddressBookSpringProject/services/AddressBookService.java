@@ -1,6 +1,5 @@
 package com.bl.AddressBookSpringProject.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,46 +15,38 @@ public class AddressBookService implements IAddressBookService {
 	
 	@Autowired
 	AddressBookRepository addressBookRepository;
-	
-	private List<AddressBookData> addressBookList = new ArrayList<>();
 
 	@Override
 	public List<AddressBookData> getAddressBookData() {
-		return addressBookList;
+		return addressBookRepository.findAll();
 	}
 
 	@Override
 	public AddressBookData getAddressBookDataById(int addId) {
-		return addressBookList.stream()
-			.filter(addData -> addData.getAddressBookId() == addId)
-			.findFirst()
+		return addressBookRepository
+			.findById(addId)
 			.orElseThrow(() -> new AddressBookException("Data not found !! Invalid ID"));
 	}
 
 	@Override
 	public AddressBookData createAddressBookData( AddressBookDTO addressBookDTO) {
 		AddressBookData addressBookData = null;
-		addressBookData = new AddressBookData(addressBookList.size()+1,addressBookDTO);
-		addressBookList.add(addressBookData);
-		return addressBookData;
+		addressBookData = new AddressBookData(addressBookDTO);
+		return addressBookRepository.save(addressBookData);
 	}
 
 	@Override
 	public AddressBookData updateAddressBookData(int addId, AddressBookDTO addressBookDTO) {
 		AddressBookData addressBookData = this.getAddressBookDataById(addId);
-        addressBookData.setName(addressBookDTO.name);
-        addressBookData.setAddress(addressBookDTO.address);
-        addressBookList.set(addId-1, addressBookData);
-        return addressBookData;
+        addressBookData.updateAddressBookData(addressBookDTO);
+		return addressBookRepository.save(addressBookData);
 	}
 
 	@Override
 	public void deleteAddressBookData(int addId) {
-		AddressBookData addressBookData = addressBookList.stream()
-				.filter(addData -> addData.getAddressBookId() == addId)
-				.findFirst()
+		AddressBookData addressBookData = addressBookRepository
+				.findById( addId)
 				.orElseThrow(() -> new AddressBookException("Delete cannot be succesfull !! Invalid ID"));
-	int delete = addressBookList.indexOf(addressBookData);
-	addressBookList.remove(delete);
+	    addressBookRepository.delete(addressBookData);
 	}
 }
