@@ -49,4 +49,9 @@ public class AddressBookService implements IAddressBookService {
 				.orElseThrow(() -> new AddressBookException("Delete cannot be succesfull !! Invalid ID"));
 	    addressBookRepository.delete(addressBookData);
 	}
+
+	@Override
+	public List<AddressBookData> getAddressBookDataByName(String name){
+		return addressBookRepository.getAddressByName(name);
+	}
 }
